@@ -49,40 +49,40 @@ app.listen(port, () => {
 
 
 app.get('/perfil', userEstaLogado, function(req, res) {
-  res.render('perfil.ejs', {
-    user: req.user // passa usuario para o template
-  });
+    res.render('perfil.ejs', {
+        user: req.user // passa usuario para o template
+    });
 });
 
 app.get('/login', function(req, res) {
-  res.render('login.ejs', { message: req.flash('loginMessage') });
+    res.render('login.ejs', { message: req.flash('loginMessage') });
 });
 
 app.get('/registrar', (req, res) => {
-  res.render('registrar', { message: req.flash('signupMessage') });
+    res.render('registrar', { message: req.flash('signupMessage') });
 });
 
 app.post('/registrar', passport.authenticate('local-signup', {
-  successRedirect : '/perfil',
-  failureRedirect : '/',
-  failureFlash : true
+    successRedirect: '/perfil',
+    failureRedirect: '/',
+    failureFlash: true
 }));
 
 app.post('/login', passport.authenticate('local', {
-  successRedirect : '/perfil',
-  failureRedirect : '/login',
-  failureFlash : true
+    successRedirect: '/perfil',
+    failureRedirect: '/login',
+    failureFlash: true
 }));
 
 app.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
+    req.logout();
+    res.redirect('/');
 });
 
 function userEstaLogado(req, res, next) {
 
-  if (req.isAuthenticated())
-    return next();
+    if (req.isAuthenticated())
+        return next();
 
-  res.redirect('/');
+    res.redirect('/');
 }

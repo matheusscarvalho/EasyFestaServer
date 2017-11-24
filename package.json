@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "node app.js -p $PORT",
         "start": "ng serve",
-        "build": "node app.js -p $PORT",
+        "build": "node app.js",
         "heroku-postbuild": "npm run build"
     },
     "private": true,
