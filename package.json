@@ -4,10 +4,8 @@
     "license": "MIT",
     "main": "app.js",
     "scripts": {
-        "dev": "node app.js -p $PORT",
-        "start": "ng serve",
-        "build": "node app.js",
-        "heroku-postbuild": "npm run build"
+        "start": "node app.js",
+        "build": "node app.js"
     },
     "private": true,
     "dependencies": {
@@ -31,9 +29,7 @@
         "primeng": "^4.3.0",
         "rxjs": "^5.5.2",
         "typescript": "~2.3.3",
-        "zone.js": "^0.8.14"
-    },
-    "devDependencies": {
+        "zone.js": "^0.8.14",
         "codelyzer": "~3.1.1",
         "jasmine-core": "~2.6.2",
         "jasmine-spec-reporter": "~4.1.0",
