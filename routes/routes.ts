@@ -4,6 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 const ObjectId = mongoose.Types.ObjectId;
+var cors = require('cors');
 
 const Anuncio = require('../models/anuncio');
 const Consumidor = require('../models/consumidor');
@@ -13,7 +14,8 @@ const Agendamento = require('../models/agendamento');
 const Compra = require('../models/compra');
 
 // Add headers
-router.use(function(req, res, next) {
+router.use(cors());
+    /*function(req, res, next) {
     
     res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -33,7 +35,7 @@ router.use(function(req, res, next) {
 
     // Pass to next layer of middleware
     next();
-});
+});*/
 
 //Fluxo de caixa
 router.get('/fluxo/de/caixa/:id', (req, res, next) => {
